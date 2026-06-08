@@ -1,0 +1,18 @@
+services:
+  express-app:
+    image: simkatti/express-app:latest
+    ports: 
+      -3000:3000
+    container_name: express-app
+
+  watchtower:
+    image: nickfedor/watchtower
+    environment:
+      -  WATCHTOWER_POLL_INTERVAL=60 
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    container_name: watchtower
+    command: express-app
+
+
+
