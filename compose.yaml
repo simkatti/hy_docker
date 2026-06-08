@@ -2,7 +2,7 @@ services:
   express-app:
     image: simkatti/express-app:latest
     ports: 
-      -3000:3000
+      - 8080:8080
     container_name: express-app
 
   watchtower:
